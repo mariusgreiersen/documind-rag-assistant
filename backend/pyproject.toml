@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "documind"
+version = "1.0.0"
+description = "Grounded question answering over PDF documents with verified page-level citations."
+
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "Marius Greiersen" }]
+# torch is a dependency of sentence-transformers. Docker and CI install the CPU-only
+# wheel from https://download.pytorch.org/whl/cpu first to avoid pulling CUDA libraries.
+dependencies = [
+    "fastapi>=0.149,<1",
+    "uvicorn[standard]>=0.54,<1",
+    "pydantic>=2.14,<3",
+    "pydantic-settings>=2.16,<3",
+    "python-multipart>=0.0.32",
+    "pypdf>=6.21,<7",
+    "cryptography>=50",
+    "chromadb>=1.5.9,<2",
+    "sentence-transformers>=6.1,<7",
+    "anthropic>=1.15,<2",
+    "numpy>=2.4,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.1,<10",
+    "httpx>=0.28",
+    "ruff>=0.17,<0.18",  # pinned: new ruff releases add lint rules
+    "mypy>=2.4,<2.5",
+    "reportlab>=5.0",
+]
+
+[project.scripts]
+documind = "documind.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["documind*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "model: uses the real sentence-transformers embedding model (downloads ~90 MB on first run)",
+    "live_llm: calls a real LLM provider; skipped unless DOCUMIND_LIVE_LLM_TESTS=1 and an API key is set",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning:chromadb.*",
+    "ignore::DeprecationWarning:pydantic.*",
+]
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "ANN"]
+ignore = ["ANN401", "E501", "RUF001", "RUF002", "RUF003", "SIM108"]  # line length is enforced by `ruff format`
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["ANN"]
+
+[tool.mypy]
+python_version = "3.11"
+strict_optional = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+check_untyped_defs = true

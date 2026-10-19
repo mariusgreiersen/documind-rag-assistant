@@ -1,0 +1,8 @@
+config,default,embedding_model,query_prefix,max_seq_length,max_input_tokens,chunk_size,chunk_overlap,truncated,chunks,hit@1,mrr@10,hit@5,random_hit@5,evidence_recall@5,budget_k,evidence_recall@budget,ingest_s,query_ms
+"A: MiniLM, small chunks",False,sentence-transformers/all-MiniLM-L6-v2,False,256,254,128,16,False,94,0.6071,0.7436,0.8929,0.0749,0.8036,20,0.9821,1.58,12.5
+B: MiniLM 250,False,sentence-transformers/all-MiniLM-L6-v2,False,256,254,250,30,False,47,0.75,0.8458,0.9643,0.15,0.9286,10,0.9821,1.66,13.6
+C: MiniLM 500 (truncated),False,sentence-transformers/all-MiniLM-L6-v2,False,256,254,500,60,True,22,0.6429,0.769,0.9643,0.2667,0.8929,5,0.8929,0.91,12.3
+D: multi-qa MiniLM 250,False,sentence-transformers/multi-qa-MiniLM-L6-cos-v1,False,512,510,250,30,False,47,0.7143,0.8099,0.9643,0.15,0.9286,10,0.9643,1.85,12.8
+E: BGE-small 250,False,BAAI/bge-small-en-v1.5,True,512,510,250,30,False,47,0.7857,0.8503,0.9286,0.15,0.8929,10,0.9286,2.79,20.9
+F: BGE-small 500,True,BAAI/bge-small-en-v1.5,True,512,510,500,60,False,22,0.7143,0.8226,1.0,0.2667,0.9643,5,0.9643,2.97,24.3
+"G: BGE-small 250, no query prefix",False,BAAI/bge-small-en-v1.5,False,512,510,250,30,False,47,0.8214,0.8682,0.9286,0.15,0.8929,10,0.9286,2.91,19.6

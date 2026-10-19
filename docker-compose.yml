@@ -1,0 +1,33 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: documind-backend
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATA_DIR: /app/data/runtime
+      # Index the bundled demo documents on first start (skipped if already present).
+      SEED_DEMO_ON_STARTUP: ${SEED_DEMO_ON_STARTUP:-true}
+      CORS_ORIGINS: '["http://localhost:8080"]'
+    volumes:
+      - documind-data:/app/data/runtime # uploads, ChromaDB and SQLite metadata survive restarts
+    ports:
+      - "8000:8000" # API and Swagger UI (http://localhost:8000/docs)
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    image: documind-frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+volumes:
+  documind-data:

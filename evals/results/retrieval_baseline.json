@@ -1,0 +1,3271 @@
+{
+  "config": {
+    "name": "baseline",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "chunk_size": 500,
+    "chunk_overlap": 60,
+    "min_chunk_tokens": 24
+  },
+  "environment": {
+    "timestamp_utc": "2026-10-19T22:12:29+00:00",
+    "python": "3.11.1",
+    "platform": "Windows-10",
+    "processor": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+    "sentence_transformers": "6.1.0",
+    "chromadb": "1.5.9",
+    "torch": "2.14.1+cpu"
+  },
+  "corpus_chunks": 22,
+  "ingest_seconds": 2.98,
+  "summary": {
+    "questions_total": 36,
+    "questions_answerable": 28,
+    "hit@1": 0.7143,
+    "evidence_recall@1": 0.6607,
+    "precision@1": 0.7143,
+    "hit@3": 0.8929,
+    "evidence_recall@3": 0.8571,
+    "precision@3": 0.3333,
+    "hit@5": 1.0,
+    "evidence_recall@5": 0.9643,
+    "precision@5": 0.2286,
+    "hit@10": 1.0,
+    "evidence_recall@10": 1.0,
+    "precision@10": 0.1214,
+    "full_coverage@5": 0.9286,
+    "mrr@10": 0.8226,
+    "by_category": {
+      "conflicting": {
+        "n": 1,
+        "hit@5": 1.0,
+        "evidence_recall@5": 0.5,
+        "mrr@10": 1.0
+      },
+      "direct": {
+        "n": 9,
+        "hit@5": 1.0,
+        "evidence_recall@5": 1.0,
+        "mrr@10": 0.8889
+      },
+      "multi_document": {
+        "n": 3,
+        "hit@5": 1.0,
+        "evidence_recall@5": 0.8333,
+        "mrr@10": 0.5667
+      },
+      "multi_passage": {
+        "n": 5,
+        "hit@5": 1.0,
+        "evidence_recall@5": 1.0,
+        "mrr@10": 1.0
+      },
+      "noisy": {
+        "n": 3,
+        "hit@5": 1.0,
+        "evidence_recall@5": 1.0,
+        "mrr@10": 0.6111
+      },
+      "paraphrase": {
+        "n": 4,
+        "hit@5": 1.0,
+        "evidence_recall@5": 1.0,
+        "mrr@10": 0.625
+      },
+      "scalability": {
+        "n": 3,
+        "hit@5": 1.0,
+        "evidence_recall@5": 1.0,
+        "mrr@10": 1.0
+      }
+    },
+    "random_baseline": {
+      "corpus_chunks": 22,
+      "random_hit@1": 0.0552,
+      "random_hit@3": 0.1628,
+      "random_hit@5": 0.2667,
+      "random_hit@10": 0.5102
+    }
+  },
+  "gate_sweep": [
+    {
+      "threshold": 0.0,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.05,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.1,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.15,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.2,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.25,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.3,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.35,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.4,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.45,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "0/8",
+      "accuracy": 0.7778
+    },
+    {
+      "threshold": 0.5,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "2/8",
+      "accuracy": 0.8333
+    },
+    {
+      "threshold": 0.55,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "2/8",
+      "accuracy": 0.8333
+    },
+    {
+      "threshold": 0.6,
+      "answerable_passed": "28/28",
+      "unanswerable_rejected": "2/8",
+      "accuracy": 0.8333
+    },
+    {
+      "threshold": 0.65,
+      "answerable_passed": "27/28",
+      "unanswerable_rejected": "2/8",
+      "accuracy": 0.8056
+    },
+    {
+      "threshold": 0.7,
+      "answerable_passed": "24/28",
+      "unanswerable_rejected": "5/8",
+      "accuracy": 0.8056
+    },
+    {
+      "threshold": 0.75,
+      "answerable_passed": "17/28",
+      "unanswerable_rejected": "7/8",
+      "accuracy": 0.6667
+    },
+    {
+      "threshold": 0.8,
+      "answerable_passed": "11/28",
+      "unanswerable_rejected": "7/8",
+      "accuracy": 0.5
+    },
+    {
+      "threshold": 0.85,
+      "answerable_passed": "2/28",
+      "unanswerable_rejected": "8/8",
+      "accuracy": 0.2778
+    },
+    {
+      "threshold": 0.9,
+      "answerable_passed": "0/28",
+      "unanswerable_rejected": "8/8",
+      "accuracy": 0.2222
+    }
+  ],
+  "min_relevance_score": 0.55,
+  "rows": [
+    {
+      "case_id": "q01",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.7667,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0,
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.7667
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6873
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.6864
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.6411
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6172
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.6025
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5937
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.5841
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.5809
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.5685
+        }
+      ]
+    },
+    {
+      "case_id": "q02",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.7834,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.7834
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.7123
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.6606
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.638
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6069
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.5859
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.5723
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.5647
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.5521
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.5472
+        }
+      ]
+    },
+    {
+      "case_id": "q03",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.7677,
+      "relevant": [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.7677
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.7029
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.6777
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.6714
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.6448
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5981
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5884
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.5556
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.5538
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.5489
+        }
+      ]
+    },
+    {
+      "case_id": "q04",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.8259,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.8259
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.6052
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5968
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.5274
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.5055
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.4621
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.4386
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.4365
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.4271
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.4268
+        }
+      ]
+    },
+    {
+      "case_id": "q05",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.7576,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.7576
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6611
+        },
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.6476
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.6075
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.5744
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.5719
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.5508
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.5434
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.5403
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.5343
+        }
+      ]
+    },
+    {
+      "case_id": "q06",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.8206,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.8206
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p2:c1",
+          "page": 2,
+          "score": 0.7563
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.5826
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.5501
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5478
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.5349
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.524
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.519
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.5141
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5123
+        }
+      ]
+    },
+    {
+      "case_id": "q07",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.6133,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6133
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.55
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5393
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.5257
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.5191
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5154
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.5135
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.5127
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.5113
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.5082
+        }
+      ]
+    },
+    {
+      "case_id": "q08",
+      "category": "multi_passage",
+      "answerable": true,
+      "top_score": 0.7461,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0,
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.7461
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6895
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.6876
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.647
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6427
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.6305
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.6291
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.618
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6151
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6149
+        }
+      ]
+    },
+    {
+      "case_id": "q09",
+      "category": "multi_passage",
+      "answerable": true,
+      "top_score": 0.8258,
+      "relevant": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.8258
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.7778
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.7233
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.6966
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.6326
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.5924
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5576
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.5534
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.5507
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.5484
+        }
+      ]
+    },
+    {
+      "case_id": "q10",
+      "category": "paraphrase",
+      "answerable": true,
+      "top_score": 0.7779,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.7779
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.7718
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.7631
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.7595
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.7326
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.7263
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.7207
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6771
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6677
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.6531
+        }
+      ]
+    },
+    {
+      "case_id": "q11",
+      "category": "paraphrase",
+      "answerable": true,
+      "top_score": 0.7022,
+      "relevant": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.7022
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.6917
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6905
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6763
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.6721
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6634
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.6594
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.657
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.6477
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6471
+        }
+      ]
+    },
+    {
+      "case_id": "q12",
+      "category": "paraphrase",
+      "answerable": true,
+      "top_score": 0.7146,
+      "relevant": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [
+          0,
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.7146
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.7128
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.7123
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.703
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.6838
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.669
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6688
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.6269
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6258
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6199
+        }
+      ]
+    },
+    {
+      "case_id": "q13",
+      "category": "paraphrase",
+      "answerable": true,
+      "top_score": 0.8025,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.8025
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.7627
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.7107
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.6529
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.6502
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6501
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.6436
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6404
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6148
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.6119
+        }
+      ]
+    },
+    {
+      "case_id": "q14",
+      "category": "multi_passage",
+      "answerable": true,
+      "top_score": 0.8156,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0,
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.8156
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.7787
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.7181
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.7134
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.6784
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.6733
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6698
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.6497
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.6491
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.64
+        }
+      ]
+    },
+    {
+      "case_id": "q15",
+      "category": "multi_passage",
+      "answerable": true,
+      "top_score": 0.8179,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0,
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.8179
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6915
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6427
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6401
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.6338
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6317
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.6093
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6092
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.6024
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.5935
+        }
+      ]
+    },
+    {
+      "case_id": "q16",
+      "category": "multi_document",
+      "answerable": true,
+      "top_score": 0.6951,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [
+          0
+        ],
+        [],
+        [],
+        [
+          1
+        ],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.6951
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p2:c1",
+          "page": 2,
+          "score": 0.6937
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.6816
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.6684
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.6674
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6518
+        },
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.6514
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6346
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.63
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.6273
+        }
+      ]
+    },
+    {
+      "case_id": "q17",
+      "category": "multi_document",
+      "answerable": true,
+      "top_score": 0.6999,
+      "relevant": [
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [
+          0
+        ],
+        [],
+        [
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.6999
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.6801
+        },
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.661
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.651
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.6314
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6157
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.5842
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.5819
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.5563
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.5543
+        }
+      ]
+    },
+    {
+      "case_id": "q18",
+      "category": "conflicting",
+      "answerable": true,
+      "top_score": 0.8655,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          0
+        ],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.8655
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.8339
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.7911
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.7502
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.7221
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.7158
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.7054
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6808
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6773
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6748
+        }
+      ]
+    },
+    {
+      "case_id": "q19",
+      "category": "multi_document",
+      "answerable": true,
+      "top_score": 0.7123,
+      "relevant": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.7123
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6713
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.6695
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6475
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6341
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6315
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.6243
+        },
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.6173
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.6012
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.5878
+        }
+      ]
+    },
+    {
+      "case_id": "q20",
+      "category": "scalability",
+      "answerable": true,
+      "top_score": 0.814,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.814
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.7367
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6692
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.6541
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.6409
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.6321
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6252
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6104
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.5939
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5933
+        }
+      ]
+    },
+    {
+      "case_id": "q21",
+      "category": "scalability",
+      "answerable": true,
+      "top_score": 0.8567,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.8567
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.7298
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.7158
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.7094
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.7069
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6836
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.6784
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.6735
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.6543
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.6538
+        }
+      ]
+    },
+    {
+      "case_id": "q22",
+      "category": "scalability",
+      "answerable": true,
+      "top_score": 0.68,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.68
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6387
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.636
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.6277
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6261
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.625
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.6196
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6191
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.613
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6129
+        }
+      ]
+    },
+    {
+      "case_id": "q23",
+      "category": "noisy",
+      "answerable": true,
+      "top_score": 0.8324,
+      "relevant": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.8324
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.7705
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6783
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.6738
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.6644
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6604
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.6567
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6402
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6309
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.6268
+        }
+      ]
+    },
+    {
+      "case_id": "q24",
+      "category": "noisy",
+      "answerable": true,
+      "top_score": 0.7024,
+      "relevant": [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.7024
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.6964
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.6951
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.676
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.6346
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5732
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.5503
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5454
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.5318
+        },
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.5252
+        }
+      ]
+    },
+    {
+      "case_id": "q25",
+      "category": "noisy",
+      "answerable": true,
+      "top_score": 0.7754,
+      "relevant": [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.7754
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.7032
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.6732
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6565
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6449
+        },
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.6411
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.6251
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.6202
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.6143
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6061
+        }
+      ]
+    },
+    {
+      "case_id": "q26",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.7331,
+      "relevant": [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.7331
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.653
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5651
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.4954
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.484
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.4753
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.469
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.4678
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.4605
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.4588
+        }
+      ]
+    },
+    {
+      "case_id": "q27",
+      "category": "multi_passage",
+      "answerable": true,
+      "top_score": 0.723,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0,
+          1
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 2,
+      "retrieved": [
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.723
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6969
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.692
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6761
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.6677
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.6631
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6445
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.625
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.6236
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.6137
+        }
+      ]
+    },
+    {
+      "case_id": "q28",
+      "category": "direct",
+      "answerable": true,
+      "top_score": 0.831,
+      "relevant": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [
+          0
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 1,
+      "retrieved": [
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.831
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p2:c1",
+          "page": 2,
+          "score": 0.7074
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.651
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.6311
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.627
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.6133
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6116
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.6066
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.6023
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6007
+        }
+      ]
+    },
+    {
+      "case_id": "u01",
+      "category": "unanswerable_on_topic",
+      "answerable": false,
+      "top_score": 0.7423,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.7423
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.5622
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.516
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.4445
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.4337
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.4318
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.4043
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.4032
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.3939
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.3889
+        }
+      ]
+    },
+    {
+      "case_id": "u02",
+      "category": "unanswerable_off_topic",
+      "answerable": false,
+      "top_score": 0.4677,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.4677
+        },
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.4504
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.4249
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.4144
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p2:c1",
+          "page": 2,
+          "score": 0.3979
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.3971
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.3962
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.3916
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.3877
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.3876
+        }
+      ]
+    },
+    {
+      "case_id": "u03",
+      "category": "unanswerable_off_topic",
+      "answerable": false,
+      "top_score": 0.4571,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.4571
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.443
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.4342
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.4272
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.4106
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.4102
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.4078
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.406
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.4059
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.3961
+        }
+      ]
+    },
+    {
+      "case_id": "u04",
+      "category": "unanswerable_on_topic",
+      "answerable": false,
+      "top_score": 0.6857,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.6857
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.6614
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.6261
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.6051
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.5908
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p5:c5",
+          "page": 5,
+          "score": 0.5901
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5875
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.5797
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.5673
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5654
+        }
+      ]
+    },
+    {
+      "case_id": "u05",
+      "category": "unanswerable_injection",
+      "answerable": false,
+      "top_score": 0.8288,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.8288
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p2:c1",
+          "page": 2,
+          "score": 0.7076
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.5426
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.5423
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.5387
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.5386
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.5263
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5219
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.5194
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.5163
+        }
+      ]
+    },
+    {
+      "case_id": "u06",
+      "category": "unanswerable_on_topic",
+      "answerable": false,
+      "top_score": 0.7137,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.7137
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.5641
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.4955
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p4:c3",
+          "page": 4,
+          "score": 0.4477
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.4475
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.4258
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.4223
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.419
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p2:c1",
+          "page": 2,
+          "score": 0.4189
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c3",
+          "page": 3,
+          "score": 0.398
+        }
+      ]
+    },
+    {
+      "case_id": "u07",
+      "category": "unanswerable_on_topic",
+      "answerable": false,
+      "top_score": 0.6534,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-caching-strategies:p2:c1",
+          "page": 2,
+          "score": 0.6534
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.6315
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p3:c2",
+          "page": 3,
+          "score": 0.6056
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p3:c2",
+          "page": 3,
+          "score": 0.598
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c1",
+          "page": 2,
+          "score": 0.5978
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.5914
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p2:c2",
+          "page": 2,
+          "score": 0.5871
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p4:c4",
+          "page": 4,
+          "score": 0.5848
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p4:c4",
+          "page": 4,
+          "score": 0.5846
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p5:c4",
+          "page": 5,
+          "score": 0.5817
+        }
+      ]
+    },
+    {
+      "case_id": "u08",
+      "category": "unanswerable_on_topic",
+      "answerable": false,
+      "top_score": 0.6935,
+      "relevant": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "evidence_matches": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "n_evidence": 0,
+      "retrieved": [
+        {
+          "chunk_id": "demo-northwind-review:p1:c0",
+          "page": 1,
+          "score": 0.6935
+        },
+        {
+          "chunk_id": "demo-northwind-review:p3:c2",
+          "page": 3,
+          "score": 0.5701
+        },
+        {
+          "chunk_id": "demo-northwind-review:p2:c1",
+          "page": 2,
+          "score": 0.5678
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p2:c1",
+          "page": 2,
+          "score": 0.5581
+        },
+        {
+          "chunk_id": "demo-vendor-notes:p1:c0",
+          "page": 1,
+          "score": 0.5485
+        },
+        {
+          "chunk_id": "demo-northwind-review:p4:c3",
+          "page": 4,
+          "score": 0.5373
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p3:c3",
+          "page": 3,
+          "score": 0.5024
+        },
+        {
+          "chunk_id": "demo-concurrency-control:p1:c0",
+          "page": 1,
+          "score": 0.486
+        },
+        {
+          "chunk_id": "demo-raft-consensus:p1:c0",
+          "page": 1,
+          "score": 0.4801
+        },
+        {
+          "chunk_id": "demo-caching-strategies:p1:c0",
+          "page": 1,
+          "score": 0.477
+        }
+      ]
+    }
+  ]
+}

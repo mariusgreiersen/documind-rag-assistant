@@ -1,0 +1,51 @@
+{
+  "description": "Original sample documents written for the DocuMind demo. Northwind Analytics and ExamplePay are fictional.",
+  "license": "Same license as this repository (MIT).",
+  "documents": [
+    {
+      "id": "demo-caching-strategies",
+      "filename": "caching-strategies-guide.pdf",
+      "title": "Caching Strategies for High-Traffic Web Services",
+      "description": "Cache patterns, invalidation, distributed caches and eviction",
+      "pages": 4,
+      "size_bytes": 10163,
+      "sha256": "c2ab842f1d0cb81900a5d5dcf9cf238ed8c0d9ea5795a53705e7b2743bb7145a"
+    },
+    {
+      "id": "demo-concurrency-control",
+      "filename": "concurrency-control-study-guide.pdf",
+      "title": "Concurrency Control in Transactional Databases: A Study Guide",
+      "description": "Pessimistic, optimistic and multiversion concurrency control",
+      "pages": 5,
+      "size_bytes": 11548,
+      "sha256": "83503e864376750a8e9fa6d3a482cccc16dd6124160b26d510a610e65df2722b"
+    },
+    {
+      "id": "demo-northwind-review",
+      "filename": "northwind-engineering-review-2025.pdf",
+      "title": "Northwind Analytics: 2025 Annual Engineering Review (fictional)",
+      "description": "A fictional company report written for the DocuMind demo",
+      "pages": 4,
+      "size_bytes": 9395,
+      "sha256": "81f5989db623881734abe3271336cd696bc368edc5c84426d14c6533bd6427fc"
+    },
+    {
+      "id": "demo-vendor-notes",
+      "filename": "payments-vendor-integration-notes.pdf",
+      "title": "Payments Vendor Integration Notes",
+      "description": "Integration notes for a fictional payments API (contains a deliberate prompt-injection test)",
+      "pages": 2,
+      "size_bytes": 4906,
+      "sha256": "04f217ce760f2f295daef3a797ca21d6dec1fcdeccc9c96ce6f109cf85c25e1f"
+    },
+    {
+      "id": "demo-raft-consensus",
+      "filename": "raft-consensus-lecture-notes.pdf",
+      "title": "Raft Consensus: Lecture Notes on Leader Election and Log Replication",
+      "description": "The Raft consensus algorithm for replicated state machines",
+      "pages": 5,
+      "size_bytes": 10817,
+      "sha256": "9f2e53856e47e9a614d59d4da5ab5b9bce81d4ca9e4ea1461a30dd74c8a31135"
+    }
+  ]
+}
